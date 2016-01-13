@@ -1,0 +1,30 @@
+//1 Algo le plus court, sans obstacle, avec chevauchement
+
+pour chaque depart
+    tant que x_depart != x_arrivee
+        parcourir l'axe x
+    ftant que
+    tant que y_depart != y_arrivee
+        parcourir l'axe y
+    ftant que
+fpour chaque
+
+
+//2 Algo pas à pas sans obstacle, sans chevauchement
+
+pour chaque depart
+    tant que x_depart != x_arrivee
+        si axe x deja occupe
+            parcourir l'axe y
+        sinon
+            parcourir l'axe x
+        fsi
+    ftant que
+    tant que y_depart != y_arrivee
+        si axe y deja occupe
+            parcourir l'axe x
+        sinon
+            parcourir l'axe y
+        fsi
+    ftant que
+fpour chaque
