@@ -49,7 +49,11 @@ public class Map extends JPanel{
           super.paintComponent(g);
           
           for(Cable c:cables){
-          	g.drawLine(c.getPointDep().getCoord().getX() , c.getPointDep().getCoord().getY() , c.getPointArr().getCoord().getX() , c.getPointArr().getCoord().getY());
+          	g.drawLine(c.getPointDep().getX() , c.getPointDep().getY() , c.getPointArr().getX() , c.getPointArr().getY());
+          }
+          
+          for(Obstacle o:obstacles){
+          	g.drawLine(c.getPointDep().getX() , c.getPointDep().getY() , c.getPointArr().getX() , c.getPointArr().getY());
           }
      }
 	
