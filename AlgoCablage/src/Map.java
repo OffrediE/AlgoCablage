@@ -1,18 +1,21 @@
 import java.util.List;
 import java.util.LinkedList;
 import java.awt.Dimension;
-import java.awt.Graphics;javax.swing.JFrame;
+import java.awt.Graphics;
+import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 public class Map extends JPanel{
 	private List<Obstacle> obstacles;
-	private List<PointDep> pointsDep;
-	private List<PointArr> pointsArr;
+	//private List<PointDep> pointsDep;
+	//private List<PointArr> pointsArr;
 	private List<Cable> cables;
-	private Pathfinder pathfinder;
+	private Algo algo;
 	
 	public Map(){
-		 setPreferredSize(new Dimension(720, 405));
+		 setPreferredSize(new Dimension(750, 750));
+		 this.obstacles = new LinkedList<Obstacle>();
+		 this.cables = new LinkedList<Cable>();
 	}
 	
 	public List<Obstacle> getObstacles() {
@@ -45,15 +48,15 @@ public class Map extends JPanel{
 	public void setCables(List<Cable> cables) {
 		this.cables = cables;
 	}
-	public void addCable(Cable cable){
+	/*public void addCable(Cable cable){
 		this.cables.add(cable);
-	}
+	}*/
 	
 	public Algo getAlgo() {
-		return pathfinder;
+		return algo;
 	}
-	public void setAlgo(Algo Algo) {
-		this.pathfinder = pathfinder;
+	public void setAlgo(Algo algo) {
+		this.algo = algo;
 	}
 	
 	public void paintComponent(Graphics g) {
@@ -69,7 +72,7 @@ public class Map extends JPanel{
           }
           
           for(Obstacle o:obstacles){
-          	LinkedList<Coord> points = (LinkedList) o.getAngles();
+          	LinkedList<Coord> points = (LinkedList) o.getSommets();
           	g.drawLine(points.getFirst().getX() , points.getFirst().getY() , points.getLast().getX() , points.getLast().getY());
           	
           	for(int i=1;i<points.size();i++){
