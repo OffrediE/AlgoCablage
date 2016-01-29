@@ -22,7 +22,7 @@ public class Map extends JPanel{
 		this.obstacles = obstacles;
 	}
 	public void addObstacle(Obstacle obstacle){
-		this.obstacles.addObstacle(obstacle);
+		this.obstacles.add(obstacle);
 	}
 	
 	/*
@@ -46,7 +46,7 @@ public class Map extends JPanel{
 		this.cables = cables;
 	}
 	public void addCable(Cable cable){
-		this.cables.addCable(cable);
+		this.cables.add(cable);
 	}
 	
 	public Algo getAlgo() {
